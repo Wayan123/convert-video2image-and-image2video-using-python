@@ -45,7 +45,7 @@ Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah video menjadi 
    - Anda menjalankan skrip dengan perintah `python potong_video_ke_gambar.py`.
    - Gambar-gambar hasil pemotongan akan disimpan dalam folder "video_frames".
 
-**Mengubah Gambar Menjadi Video**
+**2. Mengubah Gambar Menjadi Video**
 
 Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah serangkaian gambar dalam urutan tertentu menjadi sebuah video. Berikut adalah beberapa hal yang perlu diingat tentang kode ini:
 
