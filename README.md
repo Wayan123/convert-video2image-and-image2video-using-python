@@ -1,4 +1,4 @@
-# convert-video2image-and-image2video
+# convert-video2image-and-image2video using Python
 Simple python code for convert video to image and image to video
 
 **Deskripsi 1: Mengubah Video Menjadi Gambar**
