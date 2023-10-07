@@ -1,34 +1,33 @@
 import cv2
 import os
 
-# Fungsi untuk menggabungkan gambar-gambar dalam urutan berdasarkan nama file
-def gabungkan_gambar_urutan(gambar_directory, output_video):
-    gambar_files = [f for f in os.listdir(gambar_directory) if f.endswith(".jpg")]
-    gambar_files.sort()  # Urutkan gambar berdasarkan nama file
+# Function to merge images in sequence based on file names
+def merge_images_in_sequence(image_directory, output_video):
+    image_files = [f for f in os.listdir(image_directory) if f.endswith(".jpg")]
+    image_files.sort()  # Sort images based on file names
 
-    if not gambar_files:
-        print("Tidak ada file gambar (.jpg) dalam direktori.")
+    if not image_files:
+        print("No image files (.jpg) found in the directory.")
         return
 
-    # Baca resolusi gambar pertama untuk pengaturan video
-    first_image = cv2.imread(os.path.join(gambar_directory, gambar_files[0]))
+    # Read the resolution of the first image for video settings
+    first_image = cv2.imread(os.path.join(image_directory, image_files[0]))
     height, width, layers = first_image.shape
 
-    # Inisialisasi objek VideoWriter
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # Format kompresi video MP4
-    out = cv2.VideoWriter(output_video, fourcc, 2, (width, height))  # Frame rate: 2 frame per detik
+    # Initialize the VideoWriter object
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # MP4 video compression format
+    out = cv2.VideoWriter(output_video, fourcc, 2, (width, height))  # Frame rate: 2 frames per second
 
-    for gambar_file in gambar_files:
-        gambar_path = os.path.join(gambar_directory, gambar_file)
-        frame = cv2.imread(gambar_path)
-        out.write(frame)  # Menulis frame ke video
+    for image_file in image_files:
+        image_path = os.path.join(image_directory, image_file)
+        frame = cv2.imread(image_path)
+        out.write(frame)  # Write frames to the video
 
-    out.release()  # Menutup objek VideoWriter
+    out.release()  # Close the VideoWriter object
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    gambar_directory = r"D:\COMPETITION\Sayembara RDD Berbasis AI (Publik)\VIDEO_2204011_JLN. RAYA LIMBANGAN (LIMBANGAN)_ARAHNORMAL_frames"  # Ganti dengan direktori tempat gambar-gambar Anda disimpan
-    output_video = "output_video.mp4"  # Nama file untuk video keluaran
+    image_directory = r"images_directory"  # Replace with the directory where your images are stored
+    output_video = "output_video.mp4"  # Name of the output video file
 
-    gabungkan_gambar_urutan(gambar_directory, output_video)
-
+    merge_images_in_sequence(image_directory, output_video)
