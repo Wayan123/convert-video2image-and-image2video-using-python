@@ -1,17 +1,17 @@
 import cv2
 import os
 
-# Fungsi untuk memotong gambar dari video hingga mencapai jumlah frame yang diinginkan
-def potong_gambar(video_file):
+# Function to extract frames from a video until reaching the desired frame count
+def extract_frames(video_file):
     cap = cv2.VideoCapture(video_file)
     
-    frame_rate = 2  # Frame rate yang diinginkan (1 frame setiap 0.5 detik)
+    frame_rate = 2  # Desired frame rate (1 frame every 0.5 seconds)
     frame_count = 0
     
-    # Ambil nama file video tanpa ekstensi
+    # Get the video file's name without extension
     video_name = os.path.splitext(os.path.basename(video_file))[0]
     
-    # Buat folder output dengan nama yang sesuai dengan video
+    # Create an output folder with a name corresponding to the video
     output_directory = f"{video_name}_frames"
     os.makedirs(output_directory, exist_ok=True)
     
@@ -23,16 +23,16 @@ def potong_gambar(video_file):
         
         frame_count += 1
         
-        # Hanya potong gambar pada frame yang sesuai dengan frame rate yang diinginkan
+        # Only extract frames at the desired frame rate
         if frame_count % int(cap.get(5) / frame_rate) == 0:
             output_file = f"{output_directory}/frame_{frame_count}.jpg"
             cv2.imwrite(output_file, frame)
-            print(f"Frame ke-{frame_count} telah dipotong dan disimpan sebagai {output_file}")
+            print(f"Frame {frame_count} has been extracted and saved as {output_file}")
     
     cap.release()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    video_file = r"your_video.mp4"  # Ganti dengan nama video Anda
+    video_file = r"your_video.mp4"  # Replace with your video's name
     
-    potong_gambar(video_file)
+    extract_frames(video_file)
