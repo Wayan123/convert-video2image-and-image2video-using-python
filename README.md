@@ -1,64 +1,50 @@
 # convert-video2image-and-image2video using Python
-Simple python code for convert video to image and image to video
+Simple Python code for converting video to images and images to video
 
-**Deskripsi 1: Mengubah Video Menjadi Gambar**
+**Description 1: Converting Video to Images**
 
-Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah video menjadi serangkaian gambar dengan interval waktu tertentu. Beberapa poin utama tentang kode ini:
+This code is a Python script used to convert a video into a series of images with a specific time interval. Here are some key points about this code:
 
-1. Menggunakan pustaka OpenCV untuk membaca video dan memproses frame-frame video.
-2. Menggunakan frame rate yang diinginkan (dalam contoh ini, 1 frame setiap 0.5 detik) untuk menentukan interval pemotongan frame.
-3. Setiap frame gambar disimpan dalam folder output yang sesuai dengan nama video tanpa ekstensi sebagai "nama_video_frames".
-4. Hasil pemotongan berupa file gambar dengan format JPG yang disimpan di folder output.
-5. Pada akhirnya, skrip ini akan menghasilkan serangkaian gambar yang merepresentasikan frame-frame dari video yang telah dipotong sesuai dengan interval waktu yang diinginkan.
+- **Using OpenCV Library**: This code utilizes the OpenCV library to read the video and process its frames.
+- **Customizable Frame Rate**: You can set the desired frame rate (in this example, 1 frame every 0.5 seconds) to determine the frame-cutting interval.
+- **Image Storage**: Each frame image is saved in an output folder named after the video's name without an extension, such as "video_name_frames," in JPG format.
+- **How to Run the Code**: Ensure you have Python installed on your computer and install the required dependencies by running the `pip install -r requirements.txt` command, where `requirements.txt` contains a list of dependencies, including OpenCV. Add the video you want to process to the same directory as this code. Replace the video file's name on the line `video_file = "your_video.mp4"` with your video file's name, and run the Python script with the `python script_name.py` command, where `script_name.py` is the name of your Python script. The resulting cut images will be saved in the `video_name_frames` folder.
 
-Pastikan untuk mengganti "your_video.mp4" dengan nama file video yang ingin Anda proses.
+**Example Usage**:
 
-**Deskripsi 2: Mengubah Gambar Menjadi Video**
+Suppose you have a video named "video.mp4." You run the script with the `python cut_video_to_images.py` command. The resulting cut images will be saved in the "video_frames" folder.
 
-Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah serangkaian gambar dalam urutan tertentu menjadi sebuah video. Berikut adalah beberapa hal yang perlu diingat tentang kode ini:
+**Description 2: Converting Images to Video**
 
-1. Menggunakan pustaka OpenCV untuk membaca gambar-gambar dalam urutan berdasarkan nama file.
-2. Urutkan gambar-gambar berdasarkan nama file.
-3. Baca resolusi gambar pertama untuk pengaturan video sehingga video memiliki resolusi yang seragam.
-4. Inisialisasi objek VideoWriter untuk menyimpan video.
-5. Hasil video akan disimpan dengan format MP4 dan frame rate 2 frame per detik.
-6. Pada akhirnya, skrip ini akan menghasilkan video dari serangkaian gambar yang diambil dalam urutan berdasarkan nama file.
+This code is a Python script used to convert a series of images in a specific order into a video. Here are some important considerations about this code:
 
-Pastikan untuk mengganti "your_image_directory" dengan direktori tempat gambar-gambar Anda disimpan dan "output_video.mp4" dengan nama file video keluaran yang Anda inginkan.
+- **Using OpenCV**: This code leverages the OpenCV library to read the images based on their file names.
+- **Customizable Sequence**: Images are sorted based on their file names.
+- **Uniform Video Resolution**: The resolution of the video is determined based on the resolution of the first image, ensuring uniform video quality.
+- **Video Format and Frame Rate**: The resulting video is saved in MP4 format with a frame rate of 2 frames per second.
+- **How to Run the Code**: Make sure you have Python installed on your computer and install the required dependencies by running the `pip install -r requirements.txt` command, where `requirements.txt` contains a list of dependencies, including OpenCV. Ensure that the images you want to combine into a video are placed in the same directory as this code. Replace `"your_image_directory"` with the directory where your images are stored, and specify the output video file name on the line `output_video = "output_video.mp4"`. Then, run the Python script with the `python script_name.py` command, where `script_name.py` is the name of your Python script. The resulting video will be saved as "output_video.mp4."
 
-**Cara menjalankan kedua kode**
+**Example Usage**:
 
-**1: Mengubah Video Menjadi Gambar**
+Suppose you have a series of images named "frame_1.jpg," "frame_2.jpg," and so on, that you want to combine into a video. You run the script with the `python combine_images_to_video.py` command. The resulting video will be saved as "output_video.mp4."
 
-Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah video menjadi serangkaian gambar dengan interval waktu tertentu. Berikut adalah beberapa poin utama tentang kode ini:
+**How to Run Both Codes**
 
-1. **Cara Menjalankan Kode:**
-   - Pastikan Anda telah menginstal Python di komputer Anda.
-   - Instal dependensi yang diperlukan dengan menjalankan perintah `pip install -r requirements.txt`, di mana `requirements.txt` berisi daftar dependensi termasuk OpenCV.
-   - Tambahkan video yang ingin Anda proses ke dalam direktori yang sama dengan kode ini.
-   - Ganti nama file video pada baris `video_file = "your_video.mp4"` dengan nama file video Anda.
-   - Jalankan skrip Python dengan perintah `python nama_skrip.py`, di mana `nama_skrip.py` adalah nama file skrip Python yang Anda gunakan.
-   - Hasil pemotongan gambar akan disimpan dalam folder `nama_video_frames` dalam format file JPG.
+1. **Converting Video to Images**:
 
-2. **Contoh Penggunaan:**
-   - Anda memiliki video dengan nama "video.mp4".
-   - Anda menjalankan skrip dengan perintah `python potong_video_ke_gambar.py`.
-   - Gambar-gambar hasil pemotongan akan disimpan dalam folder "video_frames".
+   - Ensure you have Python installed on your computer.
+   - Install the required dependencies by running the `pip install -r requirements.txt` command, where `requirements.txt` contains a list of dependencies, including OpenCV.
+   - Add the video you want to process to the same directory as this code.
+   - Replace the video file's name on the line `video_file = "your_video.mp4"` with your video file's name.
+   - Run the Python script with the `python script_name.py` command, where `script_name.py` is the name of your Python script.
+   - The resulting cut images will be saved in the `video_name_frames` folder.
 
-**2. Mengubah Gambar Menjadi Video**
+2. **Converting Images to Video**:
 
-Kode ini adalah sebuah skrip Python yang digunakan untuk mengubah serangkaian gambar dalam urutan tertentu menjadi sebuah video. Berikut adalah beberapa hal yang perlu diingat tentang kode ini:
-
-1. **Cara Menjalankan Kode:**
-   - Pastikan Anda telah menginstal Python di komputer Anda.
-   - Instal dependensi yang diperlukan dengan menjalankan perintah `pip install -r requirements.txt`, di mana `requirements.txt` berisi daftar dependensi termasuk OpenCV.
-   - Pastikan gambar-gambar yang ingin Anda gabungkan menjadi video telah ditempatkan dalam direktori yang sama dengan kode ini.
-   - Ganti `"your_image_directory"` dengan direktori tempat gambar-gambar Anda disimpan.
-   - Tentukan nama file video keluaran pada baris `output_video = "output_video.mp4"`.
-   - Jalankan skrip Python dengan perintah `python nama_skrip.py`, di mana `nama_skrip.py` adalah nama file skrip Python yang Anda gunakan.
-   - Hasil video akan disimpan dalam file "output_video.mp4".
-
-2. **Contoh Penggunaan:**
-   - Anda memiliki serangkaian gambar dengan nama "frame_1.jpg", "frame_2.jpg", dst., yang ingin Anda gabungkan menjadi video.
-   - Anda menjalankan skrip dengan perintah `python gabungkan_gambar_ke_video.py`.
-   - Video hasil penggabungan akan disimpan dalam file "output_video.mp4".
+   - Ensure you have Python installed on your computer.
+   - Install the required dependencies by running the `pip install -r requirements.txt` command, where `requirements.txt` contains a list of dependencies, including OpenCV.
+   - Ensure that the images you want to combine into a video are placed in the same directory as this code.
+   - Replace `"your_image_directory"` with the directory where your images are stored.
+   - Specify the output video file name on the line `output_video = "output_video.mp4"`.
+   - Run the Python script with the `python script_name.py` command, where `script_name.py` is the name of your Python script.
+   - The resulting video will be saved as "output_video.mp4."
