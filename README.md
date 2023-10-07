@@ -1,7 +1,7 @@
 # convert-video2image-and-image2video using Python
 Simple Python code for converting video to images and images to video
 
-**Description 1: Converting Video to Images**
+**A. Converting Video to Images**
 
 This code is a Python script used to convert a video into a series of images with a specific time interval. Here are some key points about this code:
 
@@ -14,7 +14,7 @@ This code is a Python script used to convert a video into a series of images wit
 
 Suppose you have a video named "video.mp4." You run the script with the `python cut_video_to_images.py` command. The resulting cut images will be saved in the "video_frames" folder.
 
-**Description 2: Converting Images to Video**
+**B. Converting Images to Video**
 
 This code is a Python script used to convert a series of images in a specific order into a video. Here are some important considerations about this code:
 
