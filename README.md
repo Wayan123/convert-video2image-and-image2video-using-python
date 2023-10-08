@@ -1,6 +1,8 @@
 # convert-video2image-and-image2video using Python
 Simple Python code for converting video to images and images to video
 
+Medium article: https://medium.com/@wayandadangunsri/converting-video-to-images-using-python-and-opencv-72b2ea66a692
+
 **A. Converting Video to Images**
 
 This code is a Python script used to convert a video into a series of images with a specific time interval. Here are some key points about this code:
